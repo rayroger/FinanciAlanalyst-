@@ -7,7 +7,7 @@ FinanciAlanalyst is a monorepo containing a Python/FastAPI backend, a Next.js fr
 ```
 ┌──────────────────────────────────────────────────────────────┐
 │                        Browser / Client                       │
-│                     Next.js 14 (TypeScript)                   │
+│                     Next.js 15 (TypeScript)                   │
 │    Dashboard · Cashflow Chart · Category Chart · AI Cards     │
 └────────────────────────┬─────────────────────────────────────┘
                          │ HTTPS / REST JSON

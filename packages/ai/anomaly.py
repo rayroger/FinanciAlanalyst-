@@ -5,6 +5,9 @@ from datetime import date
 
 from core.types import AnomalyItem, Transaction
 
+# Percentage change assigned to a brand-new spending category with no prior history (100%)
+NEW_CATEGORY_PCT_CHANGE: float = 1.0
+
 
 def detect_anomalies(
     transactions: list[Transaction],
@@ -51,7 +54,6 @@ def detect_anomalies(
             continue
 
         # New category with no prior history — treat as 100% increase
-        NEW_CATEGORY_PCT_CHANGE = 1.0
         if avg_prior == 0:
             pct_change = NEW_CATEGORY_PCT_CHANGE
         else:

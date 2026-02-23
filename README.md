@@ -8,7 +8,7 @@ FinanciAlanalyst is a full-stack MVP that lets users securely connect their bank
 
 ```
 ┌─────────────┐     Plaid API      ┌──────────────┐
-│  Next.js 14 │ ◄─── Plaid Link ──► │  FastAPI     │
+│  Next.js 15 │ ◄─── Plaid Link ──► │  FastAPI     │
 │  Dashboard  │ ◄── REST/JSON  ──► │  Backend     │
 └─────────────┘                    └──────┬───────┘
                                           │
@@ -22,7 +22,7 @@ FinanciAlanalyst is a full-stack MVP that lets users securely connect their bank
 
 | Layer       | Technology                                              |
 |-------------|---------------------------------------------------------|
-| Frontend    | Next.js 14, TypeScript, Tailwind CSS, Recharts          |
+| Frontend    | Next.js 15, TypeScript, Tailwind CSS, Recharts          |
 | Backend     | Python 3.11, FastAPI, SQLAlchemy async                  |
 | Database    | PostgreSQL 15                                           |
 | Auth        | JWT (python-jose) + bcrypt                              |
@@ -76,7 +76,7 @@ docker compose exec api alembic upgrade head
 FinanciAlanalyst/
 ├── apps/
 │   ├── api/          # FastAPI backend
-│   └── web/          # Next.js 14 frontend
+│   └── web/          # Next.js 15 frontend
 ├── packages/
 │   ├── core/         # Shared Python types & categorization
 │   ├── connectors/   # Plaid API wrapper
