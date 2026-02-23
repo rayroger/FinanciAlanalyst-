@@ -24,7 +24,12 @@ export default function Home() {
     );
   }
 
-  return <Dashboard token={token} onLogout={() => { localStorage.removeItem("access_token"); setToken(null); }} />;
+  const handleLogout = () => {
+    localStorage.removeItem("access_token");
+    setToken(null);
+  };
+
+  return <Dashboard token={token} onLogout={handleLogout} />;
 }
 
 function LoginForm({ onLogin }: { onLogin: (token: string) => void }) {

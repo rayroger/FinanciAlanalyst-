@@ -50,8 +50,10 @@ def detect_anomalies(
         if avg_prior == 0 and current == 0:
             continue
 
+        # New category with no prior history — treat as 100% increase
+        NEW_CATEGORY_PCT_CHANGE = 1.0
         if avg_prior == 0:
-            pct_change = 1.0
+            pct_change = NEW_CATEGORY_PCT_CHANGE
         else:
             pct_change = (current - avg_prior) / avg_prior
 

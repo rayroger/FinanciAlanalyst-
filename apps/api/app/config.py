@@ -16,7 +16,7 @@ class Settings(BaseSettings):
     database_url: str = "postgresql+asyncpg://localhost/financialanalyst"
 
     # JWT
-    secret_key: str = "changeme"
+    secret_key: str = ""
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 60
 
@@ -42,10 +42,10 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     s = Settings()
-    if s.secret_key == "changeme" and os.environ.get("APP_ENV", "development") == "production":
+    if not s.secret_key and os.environ.get("APP_ENV", "development") == "production":
         raise RuntimeError("SECRET_KEY must be set to a secure value in production")
-    if s.secret_key == "changeme":
-        logger.warning("SECRET_KEY is using insecure default 'changeme' — set a real value in .env")
+    if not s.secret_key:
+        logger.warning("SECRET_KEY is not set — set a real value in .env before deploying")
     return s
 
 
