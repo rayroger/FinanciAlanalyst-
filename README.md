@@ -2,9 +2,16 @@
 
 > AI-powered personal finance analysis — connect your bank via Plaid, get GPT-4o insights on your spending.
 
+> [!WARNING]
+> **Privacy notice: prototype, not production-ready or independently security-audited. Do not connect a real financial account unless you have reviewed and accept the data handling and hosting setup.**
+>
+> Connecting an account shares authorized financial data with **Plaid** and this app. The app stores account and transaction data in its PostgreSQL database; Plaid access tokens are encrypted at rest. To generate insights, the backend sends **monthly spending totals by category, monthly income totals, and transaction count** to **OpenAI GPT-4o**. The current code sends these aggregates, not individual transaction descriptions. The app's hosting and database operators may also have access depending on how it is deployed. Plaid is not the only service involved, and each service has its own privacy and retention practices.
+>
+> You can revoke a Plaid connection through [Plaid Portal](https://my.plaid.com/), but this does not by itself delete copies held by this app or other providers. Review their deletion and retention policies separately.
+
 ## Overview
 
-FinanciAlanalyst is a full-stack MVP that lets users securely connect their bank accounts through [Plaid](https://plaid.com), automatically categorize transactions, and receive AI-generated financial insights powered by OpenAI GPT-4o.
+FinanciAlanalyst is a full-stack MVP that lets users connect bank accounts through [Plaid](https://plaid.com), automatically categorize transactions, and receive AI-generated financial insights powered by OpenAI GPT-4o.
 
 ```
 ┌─────────────┐     Plaid API      ┌──────────────┐
